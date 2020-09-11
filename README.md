@@ -11,7 +11,7 @@ _This is a React application that allows the user to add a keg to a list with de
 ### Specs
 | Spec |
 | :-------------     | :------------- | :------------- |
-| User is able to select `Add new keg form` to view the form for adding a beverage |    |       |
+| User is able to select `Add keg` form to view the form for adding a beverage |    |       |
 | User will enter details about the beverage and add to the list  |  |   |
 | User is able to see a list of kegs to be selected |   |     |
 | User is able to select a keg to see more detailed information about the beverage the keg contains |  |   |
