@@ -1,5 +1,5 @@
 import React from 'react';
-import { v4 } frm 'uuid';
+import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 function NewKegForm(props) {
@@ -43,8 +43,17 @@ function NewKegForm(props) {
           type='text'
           name='origin'
           placeholder='Planet of Origin' />
+        <button type='submit'>Add Keg to List</button>
       </form>
+      <button onClick={props.onClick}>Back to Keg List</button>
     </React.Fragment>
-  )
+  );
 
 }
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func,
+  onUpdateKeg: PropTypes.func,
+  onClick: PropTypes.func,
+  update: PropTypes.bool
+};
