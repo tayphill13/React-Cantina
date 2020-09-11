@@ -12,6 +12,27 @@ class KegControl extends React.Component  {
       currentKegId: null
     };
   }
+  
+  handleAddingNewKegToList = (newKeg) =>  {
+    const newMasterKegList = this.state.masterKegList.concat(newKeg);
+    this.state({
+      masterKegList: newMasterKegList,
+      currentPage: 'list'
+    });
+  }
+  
+  handleClick = () => {
+    if (this.state.currentPage === 'list') {
+      this.setState({currentPage: 'newKegForm', currentKegId: null });
+    } else {
+      this.setState({currentPage: 'list', currentKegId: null});
+    }
+  }
+  handleUpdateClick = (key) => {
+    this.setState({ currentPage: 'updateKegForm', currentKegId: key });
+  }
+
+  handleUpdateKeg = (updateKeg)
 
   render(){
     let currentlyVisibleState = null;
