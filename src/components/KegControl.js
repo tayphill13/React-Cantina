@@ -15,7 +15,7 @@ class KegControl extends React.Component  {
   
   handleAddingNewKegToList = (newKeg) =>  {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
-    this.state({
+    this.setState({
       masterKegList: newMasterKegList,
       currentPage: 'list'
     });
@@ -32,7 +32,16 @@ class KegControl extends React.Component  {
     this.setState({ currentPage: 'updateKegForm', currentKegId: key });
   }
 
-  handleUpdateKeg = (updateKeg)
+  handleUpdateKeg = (updateKeg) =>  {
+    const newMasterKegList = this.state.masterKegList.map((kegs) => {
+      if (kegs.id === updateKeg.id) {
+        return updateKeg;
+      } else {
+        return kegs;
+      }
+    });
+    this.setState({currentPage: "list", masterKegList: newMasterKegList });
+  }
 
   render(){
     let currentlyVisibleState = null;
