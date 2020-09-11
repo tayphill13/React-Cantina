@@ -1,6 +1,6 @@
 import React from 'react';
 import KegList from './KegList';
-import AddKeg from './AddKeg';
+import AddKeg from './NewKeg';
 import UpdateKeg from './UpdateKeg';
 import Keg from './Keg';
 

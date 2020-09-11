@@ -6,7 +6,8 @@ import Container from 'react-bootstrap/Container';
 function App() {
   const bodyStyle = {
     backgroundColor: 'black',
-    color: 'neon green',
+    color: 'limegreen',
+    textAlign: 'center',
     minHeight: '100vh'
   }
   return (
