@@ -57,3 +57,5 @@ NewKegForm.propTypes = {
   onClick: PropTypes.func,
   update: PropTypes.bool
 };
+
+export default NewKegForm;
