@@ -1,16 +1,22 @@
 import React from 'react';
-import NewKegForm from './KegForm';
 import KegList from './KegList';
+import AddKeg from './AddKeg';
+import UpdateKeg from './UpdateKeg';
+import Keg from './Keg';
 
 class KegControl extends React.Component  {
-
   constructor(props)  {
     super(props);
     this.state = {
-      currentPage: "list",
       masterKegList: [],
+      currentPage: "list",
       currentKegId: null
     };
+  }
+  handleClick = (pageName) => {
+    this.setState({
+      currentPage: pageName
+    });
   }
   
   handleAddingNewKegToList = (newKeg) =>  {
@@ -20,33 +26,51 @@ class KegControl extends React.Component  {
       currentPage: 'list'
     });
   }
-  
-  handleClick = () => {
-    if (this.state.currentPage === 'list') {
-      this.setState({currentPage: 'newKegForm', currentKegId: null });
-    } else {
-      this.setState({currentPage: 'list', currentKegId: null});
-    }
-  }
-  handleUpdateClick = (key) => {
-    this.setState({ currentPage: 'updateKegForm', currentKegId: key });
+
+  handleViewingDetails = (id) => {
+    const kegToView = this.state.masterKegList.filter(kegs => kegs.id === id)[0];
+    this.setState({
+      currentPage: 'details',
+      currentProduct: kegToView
+    });
   }
 
-  handleUpdateKeg = (updateKeg) =>  {
+  
+  handleUpdateClick = (id) => {
+    const kegToUpdate = this.state.masterKegList.filter(kegs => kegs.id === id)[0];
+    this.setState({ 
+      currentPage: 'update',
+      currentKeg: kegToUpdate 
+    });
+  }
+
+  handleUpdateKeg = (updatedKeg) =>  {
     const newMasterKegList = this.state.masterKegList.map((kegs) => {
-      if (kegs.id === updateKeg.id) {
-        return updateKeg;
+      if (kegs.id === updatedKeg.id) {
+        return updatedKeg;
       } else {
         return kegs;
       }
     });
-    this.setState({currentPage: "list", masterKegList: newMasterKegList });
+    this.setState({
+      currentPage: 'list', 
+      masterKegList: newMasterKegList,
+      currentKeg: null 
+    });
+  }
+  handleDeleteKeg = (id) => {
+    const newMasterKegList = this.state.masterKegList.filter(products => products.id !== id);
+    this.setState({
+      masterKegList: newMasterKegList,
+      currentPage: 'list',
+      currentKeg: null
+    });
   }
 
   render(){
     let currentlyVisibleState = null;
     if (this.state.currentPage === 'newKegForm')  {
-      currentlyVisibleState = <NewKegForm
+      currentlyVisibleState = <KegForm
                                   onNewKegCreation={this.handleAddingNewKegToList}
                                   onClick = {this.handleClick}
                                   update = {false} />
@@ -56,7 +80,7 @@ class KegControl extends React.Component  {
                                   onClick = {this.handleClick}
                                   onUpdateClick = {this.handleUpdateClick} />
     } else if (this.state.currentPage === 'updateKegForm')  {
-      currentlyVisibleState = <NewKegForm
+      currentlyVisibleState = <KegForm
                                   onUpdateKeg = {this.handleUpdateKeg}
                                   onClick = {this.handleClick}
                                   update = {true}
