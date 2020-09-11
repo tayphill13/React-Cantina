@@ -69,21 +69,27 @@ class KegControl extends React.Component  {
 
   render(){
     let currentlyVisibleState = null;
-    if (this.state.currentPage === 'newKegForm')  {
-      currentlyVisibleState = <KegForm
-                                  onNewKegCreation={this.handleAddingNewKegToList}
-                                  onClick = {this.handleClick}
-                                  update = {false} />
-    } else if (this.state.currentPage === 'list') {
+    if (this.state.currentPage === 'list')  {
       currentlyVisibleState = <KegList
                                   kegList = {this.state.masterKegList}
                                   onClick = {this.handleClick}
-                                  onUpdateClick = {this.handleUpdateClick} />
-    } else if (this.state.currentPage === 'updateKegForm')  {
-      currentlyVisibleState = <KegForm
-                                  onUpdateKeg = {this.handleUpdateKeg}
+                                  onKegClick = {this.handleViewingDetails} />
+    } else if (this.state.currentPage === 'create') {
+      currentlyVisibleState = <AddKeg
+                                  kegList = {this.state.masterKegList}
                                   onClick = {this.handleClick}
-                                  update = {true}
+                                  onAddingKeg = {this.handleAddingNewKegToList} />
+    } else if (this.state.currentPage === 'details') {
+      currentlyVisibleState = <Keg
+                                  keg = {this.state.currentKeg}
+                                  onClick = {this.handleClick}
+                                  onDeleteClick = {this.handleDeleteKeg}
+                                  onEditClick = {this.handleUpdateClick} />
+    } else if (this.state.currentPage === 'updateKeg')  {
+      currentlyVisibleState = <UpdateKeg
+                                  keg = {this.state.currentKeg}
+                                  onClick = {this.handleClick}
+                                  onUpdateKeg = {this.handleUpdateKeg}
                                   kegId = {this.state.currentKegId} />
     }
     return (
