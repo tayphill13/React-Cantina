@@ -15,8 +15,9 @@ function KegList(props) {
         pintsRemaining={keg.pintsRemaining}
         kegId={keg.id}
         key={keg.id} />
-    
       )}
+      
+      <button onClick={props.onClick}>Sell Pint</button>
       <button onClick={props.onClick}>Add Keg</button>
     </React.Fragment>
   );

@@ -11,7 +11,7 @@ function NewKegForm(props) {
                                 brand: event.target.brand.value,
                                 price: event.target.price.value,
                                 origin: event.target.origin.value,
-                                // pintsRemaining: event.target.pintsRemaining.value,
+                                pintsRemaining: event.target.pintsRemaining.value,
                                 id: v4()
                               });
     } else {
@@ -43,6 +43,10 @@ function NewKegForm(props) {
           type='text'
           name='origin'
           placeholder='Planet of Origin' />
+        <input
+          type='number'
+          name="pintsRemaining"
+          placeholder='Pints remaining (124)' />
         <button type='submit'>Add Keg to List</button>
       </form>
       <button onClick={props.onClick}>Back to Keg List</button>
