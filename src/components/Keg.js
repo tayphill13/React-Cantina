@@ -15,6 +15,7 @@ function Keg(props) {
       <h3>{props.name} from {props.origin}</h3>
       <p>{props.brand}</p>
       <p>{props.price}</p>
+      <p>{props.pintsRemaining}</p>
       <button onClick={handleUpdateClick}>Update</button>
       {/* <button onClick={handleDeleteClick}>Delete</button> */}
       <hr/>
