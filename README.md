@@ -1,7 +1,61 @@
+# _React-Cantina_
+
+#### _This is React Application that tracks the kegs at a Cantina, 9.11.2020_
+
+#### By _**Taylor Phillips**_
+
+## Description
+
+_This is a React application that allows the user to add a keg to a list with details about the beverage inside.  The user can continue to add additional kegs, select a keg to see more about the details of what's inside.  The user is also able to select a keg to take a pint from it.  User can then look at the details and see how much of the beverage is remaining._
+
+### Specs
+| Spec |
+| :-------------     | :------------- | :------------- |
+| User is able to select `Add new keg form` to view the form for adding a beverage |    |       |
+| User will enter details about the beverage and add to the list  |  |   |
+| User is able to see a list of kegs to be selected |   |     |
+| User is able to select a keg to see more detailed information about the beverage the keg contains |  |   |
+|    |   |   |
+<br>
 <!-- This is my diagram, to move wherever I need it in my readme: -->
 <img src="./src/reactCantinaDiagram.png"
      alt="React Cantina Diagram"
      style="margin-right: 10px; width: 1000px" />
+<br>
+## Setup/Installation Requirements
+
+* _Install Git Bash_
+* _Using a Terminal on desktop, user will need to type git init_
+* _Clone file to desktop from repo on github_
+* _Navigate to project folder using command line type: [cd Desktop] followed by [cd React-Cantina]_
+* _In Command Line, type, npm install and wait for the application to complete it's action_
+* _Then type npm run build in the command line terminal_
+
+## Known Bugs
+
+_Currently no known bugs, please report them to Taylor_
+
+## Support and contact details
+
+_Contact me at <taylorphillips133@gmail.com>_
+
+## Technologies Used
+
+* _HTML_
+* _CSS_
+* _Bootstrap_
+* _JavaScript_
+* _VSCode_
+* _REACT_
+* _Figma_
+
+### License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2020 **_Taylor Phillips_**
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
