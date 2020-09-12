@@ -12,6 +12,7 @@ class KegControl extends React.Component  {
       currentPage: "list",
       currentKegId: null
     };
+    // this.handleClick = this.handleClick.bind(this);
   }
   handleClick = (pageName) => {
     this.setState({
