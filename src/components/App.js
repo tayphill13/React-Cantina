@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "./Header";
 import KegControl from "./KegControl";
 import Container from 'react-bootstrap/Container';
+import Footer from './Footer';
 
 function App() {
   const bodyStyle = {
@@ -14,6 +15,7 @@ function App() {
     <Container fluid style={bodyStyle}>
       <Header />
       <KegControl />
+      <Footer />
     </Container>
   );
 }

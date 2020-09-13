@@ -5,11 +5,11 @@ import UpdateKeg from './UpdateKeg';
 import Keg from './Keg';
 
 class KegControl extends React.Component  {
-  constructor(props)  {
+  constructor(props) {
     super(props);
     this.state = {
       masterKegList: [],
-      currentPage: "list",
+      currentPage: 'list',
       currentKegId: null
     };
     // this.handleClick = this.handleClick.bind(this);
@@ -20,11 +20,11 @@ class KegControl extends React.Component  {
     });
   }
   
-  handleAddingNewKegToList = (newKeg) =>  {
+  handleAddingNewKeg = (newKeg) =>  {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
     this.setState({
       masterKegList: newMasterKegList,
-      currentPage: 'list'
+      currentPage: 'list',
     });
   }
 
@@ -54,8 +54,8 @@ class KegControl extends React.Component  {
       }
     });
     this.setState({
-      currentPage: 'list', 
       masterKegList: newMasterKegList,
+      currentPage: 'list', 
       currentKeg: null 
     });
   }
@@ -79,7 +79,7 @@ class KegControl extends React.Component  {
       currentlyVisibleState = <AddKeg
                                   kegList = {this.state.masterKegList}
                                   onClick = {this.handleClick}
-                                  onAddingKeg = {this.handleAddingNewKegToList} />
+                                  onAddingKeg = {this.handleAddingNewKeg} />
     } else if (this.state.currentPage === 'details') {
       currentlyVisibleState = <Keg
                                   keg = {this.state.currentKeg}
