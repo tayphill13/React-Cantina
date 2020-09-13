@@ -73,25 +73,23 @@ class KegControl extends React.Component  {
     if (this.state.currentPage === 'list')  {
       currentlyVisibleState = <KegList
                                   kegList = {this.state.masterKegList}
-                                  onClick = {this.handleClick}
+                                  onLinkClick = {this.handleClick}
                                   onKegClick = {this.handleViewingDetails} />
     } else if (this.state.currentPage === 'create') {
       currentlyVisibleState = <AddKeg
-                                  kegList = {this.state.masterKegList}
-                                  onClick = {this.handleClick}
+                                  onLinkClick = {this.handleClick}
                                   onAddingKeg = {this.handleAddingNewKeg} />
     } else if (this.state.currentPage === 'details') {
       currentlyVisibleState = <Keg
                                   keg = {this.state.currentKeg}
-                                  onClick = {this.handleClick}
+                                  onLinkClick = {this.handleClick}
                                   onDeleteClick = {this.handleDeleteKeg}
                                   onEditClick = {this.handleUpdateClick} />
     } else if (this.state.currentPage === 'updateKeg')  {
       currentlyVisibleState = <UpdateKeg
                                   keg = {this.state.currentKeg}
-                                  onClick = {this.handleClick}
-                                  onUpdateKeg = {this.handleUpdateKeg}
-                                  kegId = {this.state.currentKegId} />
+                                  onLinkClick = {this.handleClick}
+                                  onUpdateKeg = {this.handleUpdateKeg}/>
     }
     return (
       <React.Fragment>

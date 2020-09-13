@@ -5,16 +5,16 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 function KegForm(props) {
-  const { onClick, onSubmittingForm, buttonText, defaultName, defaultBrand, defaultPrice, defaultOrigin, defaultPintsRemaining } = props;
+  const { onLinkClick, onSubmittingForm, buttonText, defaultName, defaultBrand, defaultPrice, defaultOrigin, defaultPintsRemaining } = props;
 
-  function handleFormSubmission(event) {
+  function handleSubmittingForm(event) {
     event.preventDefault();
     onSubmittingForm(event);
   }
 
   return (
     <React.Fragment>
-      <Form onSubmit={handleFormSubmission}>
+      <Form onSubmit={handleSubmittingForm}>
         <Form.Group controlId="name">
           <Form.Label>Beverage</Form.Label>
           <Form.Control type='text' placeholder="Beverage Name" defaultValue={defaultName} required />
@@ -43,7 +43,7 @@ function KegForm(props) {
         </Form.Group>
         <Button className='mb-3' variant='success' type="submit" size='lg' >{buttonText}</Button>
       </Form>
-      <Button className='mb-3' variant='secondary' type='button' size='lg' onClick={()=>onClick('list')}>Back to Keg List</Button>
+      <Button className='mb-3' variant='secondary' type='button' size='lg' onClick={()=>onLinkClick('list')}>Back to Keg List</Button>
     </React.Fragment>
   )
 }
@@ -60,71 +60,3 @@ KegForm.propTypes = {
 }
 
 export default KegForm;
-
-
-
-
-
-
-
-
-
-//   function handleNewKegFormSubmission(event) {
-//     event.preventDefault();
-//     if(!props.update) {
-//       props.onNewKegCreation({  name: event.target.name.value,
-//                                 brand: event.target.brand.value,
-//                                 price: event.target.price.value,
-//                                 origin: event.target.origin.value,
-//                                 pintsRemaining: event.target.pintsRemaining.value,
-//                                 id: v4()
-//                               });
-//     } else {
-//       props.onUpdateTicket({  name: event.target.name.value,
-//                               brand: event.target.brand.value,
-//                               price: event.target.price.value,
-//                               origin: event.target.origin.value,
-//                               id: props.kegId
-//       });
-//     }
-//   }
-
-//   return (
-//     <React.Fragment>
-//       <form onSubmit = {handleNewKegFormSubmission}>
-//         <input
-//           type='text'
-//           name='name'
-//           placeholder='Beverage Name' />
-//         <input
-//           type='text'
-//           name='brand'
-//           placeholder='Brand' />
-//         <input
-//           type='number'
-//           name='price'
-//           placeholder='Price/pint' />
-//         <input
-//           type='text'
-//           name='origin'
-//           placeholder='Planet of Origin' />
-//         <input
-//           type='number'
-//           name="pintsRemaining"
-//           placeholder='Pints remaining (124)' />
-//         <button type='submit'>Add Keg to List</button>
-//       </form>
-//       <button onClick={props.onClick}>Back to Keg List</button>
-//     </React.Fragment>
-//   );
-
-// 
-
-// NewKegForm.propTypes = {
-//   onNewKegCreation: PropTypes.func,
-//   onUpdateKeg: PropTypes.func,
-//   onClick: PropTypes.func,
-//   update: PropTypes.bool
-// };
-
-// export default NewKegForm;

@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "./Header";
-import KegControl from "./KegControl";
+import Header from './Header';
+import KegControl from './KegControl';
 import Container from 'react-bootstrap/Container';
 import Footer from './Footer';
 
@@ -9,7 +9,7 @@ function App() {
     backgroundColor: 'black',
     color: 'limegreen',
     textAlign: 'center',
-    minHeight: '100vh'
+    minHeight: '200vh'
   }
   return (
     <Container fluid style={bodyStyle}>
