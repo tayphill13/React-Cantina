@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import v1 from 'uuid';
+import v5 from 'uuid';
 import KegForm from './KegForm';
 
-function AddKeg(props) {
+function NewKeg(props) {
   function handleAddingNewKeg(event) {
     props.onAddingKeg({
       name: event.target.name.value,
@@ -11,7 +11,7 @@ function AddKeg(props) {
       brand: event.target.brand.value,
       origin: event.target.origin.value,
       pintsRemaining: event.target.pintsRemaining.value,
-      id: v1()
+      id: v5()
     })
   }
 
@@ -23,9 +23,9 @@ function AddKeg(props) {
   )
 }
 
-AddKeg.propTypes = {
+NewKeg.propTypes = {
   onClick: PropTypes.func,
   onAddingKeg: PropTypes.func
 }
 
-export default AddKeg;
+export default NewKeg;

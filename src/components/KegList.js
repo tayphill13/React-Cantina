@@ -1,32 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Keg from "./Keg";
-import PropTypes from "prop-types";
+import CardColumns from 'react-bootstrap/CardColumns';
+import Button from 'react-bootstrap/Button';
 
 function KegList(props) {
   return (
     <React.Fragment>
-      <hr />
-      {props.kegList.map((keg) =>
-      <Keg
-        name={keg.name}
-        brand={keg.brand}
-        price={keg.price}
-        abv={keg.abv}
-        pintsRemaining={keg.pintsRemaining}
-        kegId={keg.id}
-        key={keg.id} />
-      )}
+      <CardColumns>
+        {props.kegList.map((kegs) =>
+          <Keg
+            onKegClick={props.onKegClick}
+            name={kegs.name}
+            brand={kegs.brand}
+            price={kegs.price}
+            pintsRemaining={kegs.pintsRemaining}
+            id={kegs.id}
+            key={kegs.id} />
+        )}
       
-      <button onClick={props.onClick}>Sell Pint</button>
-      <button onClick={props.onClick}>Add Keg</button>
+      </CardColumns>
+      <Button variant='secondary' type='button' size='md' onClick={()=>props.onLinkClick('create')}>Add Keg</Button>
+      {/* <Button variant='success' type='button' size='md' onClick={()=>props.onLinkClick('serve')}>Serve Pint</Button> */}
     </React.Fragment>
-  );
+  )
 }
 
 KegList.propTypes = {
   kegList: PropTypes.array,
-  onClick: PropTypes.func
-};
+  onLinkClick: PropTypes.func,
+  onKegClick: PropTypes.func
+}
 
 
 export default KegList;

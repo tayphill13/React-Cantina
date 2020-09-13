@@ -1,8 +1,8 @@
 import React from 'react';
 import KegList from './KegList';
-import AddKeg from './NewKeg';
+import NewKeg from './NewKeg';
 import UpdateKeg from './UpdateKeg';
-import Keg from './Keg';
+import KegDetails from './KegDetails';
 
 class KegControl extends React.Component  {
   constructor(props) {
@@ -76,11 +76,11 @@ class KegControl extends React.Component  {
                                   onLinkClick = {this.handleClick}
                                   onKegClick = {this.handleViewingDetails} />
     } else if (this.state.currentPage === 'create') {
-      currentlyVisibleState = <AddKeg
+      currentlyVisibleState = <NewKeg
                                   onLinkClick = {this.handleClick}
                                   onAddingKeg = {this.handleAddingNewKeg} />
     } else if (this.state.currentPage === 'details') {
-      currentlyVisibleState = <Keg
+      currentlyVisibleState = <KegDetails
                                   keg = {this.state.currentKeg}
                                   onLinkClick = {this.handleClick}
                                   onDeleteClick = {this.handleDeleteKeg}
