@@ -1,27 +1,18 @@
 import React from 'react';
 import PropTypes from "prop-types";
-
+import Card from 'react-bootstrap/Card';
 
 function Keg(props) {
-  function handleUpdateClick() {
-    props.onUpdateClick(props.kegId);
-  }
-
-  // function handleDeleteClick() {
-  //   props.onDeleteClick(props.kegId);
-  // }
   return (
-    <React.Fragment>
-      <h3>{props.name} from {props.origin}</h3>
-      <p>{props.brand}</p>
-      <p>{props.price}</p>
-      <p>{props.pintsRemaining}</p>
-      <button onClick={handleUpdateClick}>Update</button>
-      {/* <button onClick={handleDeleteClick}>Delete</button> */}
-      <hr/>
-    </React.Fragment>
-  );
-
+    <Card onClick={()=>props.onKegClick(props.id)}>
+      <Card.Header as='h4'>{props.name}</Card.Header>
+      <Card.Header as='h5'>from {props.origin}</Card.Header>
+      <Card.Body>
+        <Card.Text>${props.price}</Card.Text>
+        <Card.Text>{props.brand}</Card.Text>
+      </Card.Body>
+    </Card>
+  )
 }
 
 Keg.propTypes = {
@@ -29,8 +20,8 @@ Keg.propTypes = {
   brand: PropTypes.string,
   price: PropTypes.number.isRequired,
   origin: PropTypes.string.isRequired,
-  onUpdateClick: PropTypes.func
-  // onDeleteClick: PropTypes.func
+  id: PropTypes.string,
+  onKegClick: PropTypes.func
 };
 
 export default Keg;
