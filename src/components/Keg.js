@@ -4,10 +4,10 @@ import Card from 'react-bootstrap/Card';
 
 function Keg(props) {
   return (
-    <Card onLinkClick={()=>props.onKegClick(props.id)}>
+    <Card onClick={()=>props.onKegClick(props.id)}>
       <Card.Header as='h4'>{props.name}</Card.Header>
       <Card.Body>
-        <Card.Text as='h5'>{props.origin}</Card.Text>
+        <Card.Text as='h5'>from {props.origin}</Card.Text>
         <Card.Text>{props.pintsRemaining} pints remaining</Card.Text>
         <Card.Text>${props.price}</Card.Text>
         <Card.Text>{props.brand}</Card.Text>
@@ -17,13 +17,12 @@ function Keg(props) {
 }
 
 Keg.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   brand: PropTypes.string,
-  price: PropTypes.number.isRequired,
-  origin: PropTypes.string.isRequired,
-  pintsRemaining: PropTypes.number.isRequired,
+  price: PropTypes.number,
+  origin: PropTypes.string,
+  pintsRemaining: PropTypes.number,
   id: PropTypes.string,
-  onLinkClick: PropTypes.func,
   onKegClick: PropTypes.func
 };
 
