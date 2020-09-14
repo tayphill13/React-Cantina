@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 function KegForm(props) {
-  const { onLinkClick, onSubmittingForm, buttonText, defaultName, defaultBrand, defaultPrice, defaultOrigin, defaultPintsRemaining } = props;
+  const { onSubmittingForm, buttonText, defaultName, defaultBrand, defaultPrice, defaultOrigin, defaultPintsRemaining } = props;
 
   function handleSubmittingForm(event) {
     event.preventDefault();
@@ -33,23 +33,21 @@ function KegForm(props) {
           <Form.Label>Pints Remaining</Form.Label>
           <Form.Control type='number' placeholder='124' defaultValue={defaultPintsRemaining} required />
         </Form.Group>
+        <Form.Group controlId="origin">
+          <Form.Label>Origin</Form.Label>
+          <Form.Control type='text' placeholder="Planet of Origin" defaultValue={defaultOrigin} required />
+        </Form.Group>
         <Form.Group controlId="brand">
           <Form.Label>Brand</Form.Label>
           <Form.Control type='text' placeholder="Beverage Brand" defaultValue={defaultBrand} required />
         </Form.Group>
-        <Form.Group controlId='origin'>
-          <Form.Label>Origin</Form.Label>
-          <Form.Control type='text' placeholder="Planet of Origin" defaultValue={defaultOrigin} required />
-        </Form.Group>
         <Button className='mb-3' variant='success' type="submit" size='lg' >{buttonText}</Button>
       </Form>
-      <Button className='mb-3' variant='secondary' type='button' size='lg' onClick={()=>onLinkClick('list')}>Back to Keg List</Button>
     </React.Fragment>
   )
 }
 
 KegForm.propTypes = {
-  onClick: PropTypes.func.isRequired,
   onSubmittingForm: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
   defaultName: PropTypes.string,

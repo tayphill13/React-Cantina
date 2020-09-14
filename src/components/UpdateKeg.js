@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import KegForm from './KegForm';
 
 function UpdateKeg(props) {
-  const { keg, onClick, onUpdateKeg } = props;
+  const { keg, onLinkClick, onUpdateKeg } = props;
 
   function handleUpdateKeg(event) {
     onUpdateKeg({
@@ -17,7 +17,7 @@ function UpdateKeg(props) {
 
   return (
     <KegForm
-      onClick={onClick}
+      onLinkClick={onLinkClick}
       onSubmittingForm={handleUpdateKeg}
       buttonText="Edit Keg"
       defautlName={keg.name}
@@ -29,7 +29,7 @@ function UpdateKeg(props) {
 
 UpdateKeg.propTypes = {
   keg: PropTypes.object,
-  onClick: PropTypes.func,
+  onLinkClick: PropTypes.func,
   onUpdateKeg: PropTypes.func
 }
 

@@ -5,6 +5,7 @@ import UpdateKeg from './UpdateKeg';
 import KegDetails from './KegDetails';
 
 class KegControl extends React.Component  {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -14,6 +15,7 @@ class KegControl extends React.Component  {
     };
     // this.handleClick = this.handleClick.bind(this);
   }
+  
   handleClick = (pageName) => {
     this.setState({
       currentPage: pageName

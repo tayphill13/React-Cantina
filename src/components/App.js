@@ -9,7 +9,7 @@ function App() {
     backgroundColor: 'black',
     color: 'limegreen',
     textAlign: 'center',
-    minHeight: '200vh'
+    minHeight: '300vh'
   }
   return (
     <Container fluid style={bodyStyle}>
@@ -17,7 +17,7 @@ function App() {
       <KegControl />
       <Footer />
     </Container>
-  );
+  )
 }
 
 export default App;

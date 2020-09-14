@@ -17,14 +17,14 @@ function NewKeg(props) {
 
   return (
       <KegForm
-        onClick={props.OnClick}
+        onLinkClick={props.onLinkClick}
         onSubmittingForm={handleAddingNewKeg}
         buttonText="Add this Keg" />
   )
 }
 
 NewKeg.propTypes = {
-  onClick: PropTypes.func,
+  onLinkClick: PropTypes.func,
   onAddingKeg: PropTypes.func
 }
 
