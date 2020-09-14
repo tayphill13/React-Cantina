@@ -11,11 +11,10 @@ class KegControl extends React.Component  {
     this.state = {
       masterKegList: [],
       currentPage: 'list',
-      currentKegId: null
+      currentKeg: null
     };
-    // this.handleClick = this.handleClick.bind(this);
   }
-  
+
   handleClick = (pageName) => {
     this.setState({
       currentPage: pageName
@@ -48,8 +47,8 @@ class KegControl extends React.Component  {
   }
 
   handleUpdateKeg = (updatedKeg) =>  {
-    const newMasterKegList = this.state.masterKegList.map((kegs) => {
-      if (kegs.id === updatedKeg.id) {
+    const newMasterKegList = this.state.masterKegList.map(kegs => {
+      if (updatedKeg.id === kegs.id) {
         return updatedKeg;
       } else {
         return kegs;
@@ -57,12 +56,12 @@ class KegControl extends React.Component  {
     });
     this.setState({
       masterKegList: newMasterKegList,
-      currentPage: 'list', 
-      currentKeg: null 
+      currentPage: 'details', 
+      currentKeg: updatedKeg
     });
   }
   handleDeleteKeg = (id) => {
-    const newMasterKegList = this.state.masterKegList.filter(products => products.id !== id);
+    const newMasterKegList = this.state.masterKegList.filter(kegs => kegs.id !== id);
     this.setState({
       masterKegList: newMasterKegList,
       currentPage: 'list',
@@ -71,31 +70,31 @@ class KegControl extends React.Component  {
   }
 
   render(){
-    let currentlyVisibleState = null;
+    let pageToDisplay = null;
     if (this.state.currentPage === 'list')  {
-      currentlyVisibleState = <KegList
-                                  kegList = {this.state.masterKegList}
-                                  onLinkClick = {this.handleClick}
-                                  onKegClick = {this.handleViewingDetails} />
+      pageToDisplay = <KegList
+        kegList = {this.state.masterKegList}
+        onLinkClick = {this.handleClick}
+        onKegClick = {this.handleViewingDetails} />
     } else if (this.state.currentPage === 'create') {
-      currentlyVisibleState = <NewKeg
-                                  onLinkClick = {this.handleClick}
-                                  onAddingKeg = {this.handleAddingNewKeg} />
+      pageToDisplay = <NewKeg
+        onLinkClick = {this.handleClick}
+        onAddingKeg = {this.handleAddingNewKeg} />
     } else if (this.state.currentPage === 'details') {
-      currentlyVisibleState = <KegDetails
-                                  keg = {this.state.currentKeg}
-                                  onLinkClick = {this.handleClick}
-                                  onDeleteClick = {this.handleDeleteKeg}
-                                  onEditClick = {this.handleUpdateClick} />
+      pageToDisplay = <KegDetails
+        keg = {this.state.currentKeg}
+        onLinkClick = {this.handleClick}
+        onDeleteClick = {this.handleDeleteKeg}
+        onUpdateClick = {this.handleUpdateClick} />
     } else if (this.state.currentPage === 'updateKeg')  {
-      currentlyVisibleState = <UpdateKeg
-                                  keg = {this.state.currentKeg}
-                                  onLinkClick = {this.handleClick}
-                                  onUpdateKeg = {this.handleUpdateKeg}/>
+      pageToDisplay = <UpdateKeg
+        keg = {this.state.currentKeg}
+        onLinkClick = {this.handleClick}
+        onUpdateKeg = {this.handleUpdateKeg}/>
     }
     return (
       <React.Fragment>
-        {currentlyVisibleState}
+        {pageToDisplay}
       </React.Fragment>
     );
   }
