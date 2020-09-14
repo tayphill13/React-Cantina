@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 
+
 function KegDetails(props) {
   const { keg, onLinkClick, onDeleteClick, onUpdateClick } = props;
 
   return (
     <React.Fragment>
-      <h2>{keg.name}</h2>
+      <p>{keg.name}</p>
       <p>{keg.brand}</p>
       <p>{keg.price}</p>
       <p>{keg.origin}</p>

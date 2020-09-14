@@ -3,14 +3,16 @@ import React from 'react';
 function Footer() {
   const footerStyle = {
     fontFamily: 'sans-serif',
+    position: 'absolute',
+    bottom: '0',
     textAlign: 'center',
     backgroundColor: 'orange',
-    paddingTop: '20px',
-    paddingBottom: "20px",
+    width: '1320px',
     marginBottom: "10px"
   }
   const h1Footer = {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'white'
   }
   return (
     <div className="page-footer" style={footerStyle}>

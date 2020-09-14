@@ -9,10 +9,12 @@ class KegControl extends React.Component  {
   constructor(props) {
     super(props);
     this.state = {
+      counter: 0,
       masterKegList: [],
       currentPage: 'list',
-      currentKeg: null
+      currentKeg: null,
     };
+    this.handleClick =this.handleClick.bind(this);
   }
 
   handleClick = (pageName) => {
