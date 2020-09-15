@@ -34,7 +34,7 @@ class KegControl extends React.Component  {
     const kegToView = this.state.masterKegList.filter(kegs => kegs.id === id)[0];
     this.setState({
       currentPage: 'details',
-      currentProduct: kegToView
+      currentKeg: kegToView
     });
   }
 
