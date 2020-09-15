@@ -7,12 +7,13 @@ function Footer() {
     bottom: '0',
     textAlign: 'center',
     backgroundColor: 'orange',
-    width: '1320px',
-    marginBottom: "10px"
+    width: '210px',
+    marginBottom: '5px',
+    marginLeft: '1100px'
   }
   const h1Footer = {
-    fontWeight: 'bold',
-    color: 'white'
+    color: 'white',
+    fontSize: '14px'
   }
   return (
     <div className="page-footer" style={footerStyle}>

@@ -11,6 +11,7 @@ function UpdateKeg(props) {
       price: event.target.price.value,
       brand: event.target.brand.value,
       origin: event.target.origin.value,
+      pintsRemaining: event.target.pintsRemaining.value,
       id: keg.id
     });
   }
@@ -20,10 +21,11 @@ function UpdateKeg(props) {
       onLinkClick={onLinkClick}
       onSubmittingForm={handleUpdateKeg}
       buttonText="Edit Keg"
-      defautlName={keg.name}
+      defaultName={keg.name}
       defaultPrice={keg.price}
       defaultBrand={keg.brand}
-      defaultOrigin={keg.origin} />
+      defaultOrigin={keg.origin}
+      defailtPintsRemaining={keg.pintsRemaining} />
   )
 }
 

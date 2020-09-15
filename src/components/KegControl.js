@@ -9,12 +9,11 @@ class KegControl extends React.Component  {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0,
       masterKegList: [],
-      currentPage: 'list',
+      currentPage: 'index',
       currentKeg: null,
     };
-    this.handleClick =this.handleClick.bind(this);
+    // this.handleClick =this.handleClick.bind(this);
   }
 
   handleClick = (pageName) => {
@@ -27,7 +26,7 @@ class KegControl extends React.Component  {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
     this.setState({
       masterKegList: newMasterKegList,
-      currentPage: 'list',
+      currentPage: 'index',
     });
   }
 
@@ -66,14 +65,14 @@ class KegControl extends React.Component  {
     const newMasterKegList = this.state.masterKegList.filter(kegs => kegs.id !== id);
     this.setState({
       masterKegList: newMasterKegList,
-      currentPage: 'list',
+      currentPage: 'index',
       currentKeg: null
     });
   }
 
   render(){
     let pageToDisplay = null;
-    if (this.state.currentPage === 'list')  {
+    if (this.state.currentPage === 'index')  {
       pageToDisplay = <KegList
         kegList = {this.state.masterKegList}
         onLinkClick = {this.handleClick}
@@ -88,7 +87,7 @@ class KegControl extends React.Component  {
         onLinkClick = {this.handleClick}
         onDeleteClick = {this.handleDeleteKeg}
         onUpdateClick = {this.handleUpdateClick} />
-    } else if (this.state.currentPage === 'updateKeg')  {
+    } else if (this.state.currentPage === 'update')  {
       pageToDisplay = <UpdateKeg
         keg = {this.state.currentKeg}
         onLinkClick = {this.handleClick}
@@ -100,7 +99,6 @@ class KegControl extends React.Component  {
       </React.Fragment>
     );
   }
-
 }
 
 export default KegControl;

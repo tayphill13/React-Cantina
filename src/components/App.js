@@ -11,6 +11,7 @@ function App() {
     textAlign: 'center',
     minHeight: '300vh'
   }
+
   return (
     <Container fluid style={bodyStyle}>
       <Header />
