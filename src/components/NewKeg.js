@@ -10,7 +10,7 @@ function NewKeg(props) {
       price: event.target.price.value,
       brand: event.target.brand.value,
       origin: event.target.origin.value,
-      pintsRemaining: event.target.pintsRemaining.value,
+      pintsRemaining: parseInt(event.target.pintsRemaining.value),
       id: v5()
     })
   }

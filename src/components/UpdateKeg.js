@@ -25,7 +25,7 @@ function UpdateKeg(props) {
       defaultPrice={keg.price}
       defaultBrand={keg.brand}
       defaultOrigin={keg.origin}
-      defailtPintsRemaining={keg.pintsRemaining} />
+      defaultPintsRemaining={keg.pintsRemaining} />
   )
 }
 

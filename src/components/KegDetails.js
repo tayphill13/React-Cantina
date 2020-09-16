@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
-import { propTypes } from 'react-bootstrap/esm/Image';
 
 
 function KegDetails(props) {
@@ -14,6 +13,7 @@ function KegDetails(props) {
       <p>{keg.price}</p>
       <p>{keg.origin}</p>
       <p>{keg.pintsRemaining} pints remaining</p>
+      {/* <Button variant='success' type='button' size='md' onClick={()=>props.onLinkClick('serve')}>Serve Pint</Button> */}
       <Button className="mb-3" variant='secondary' type='button' size='md' onClick={()=>onLinkClick('index')}>Back to Keg List</Button>
       <Button className="mb-3" variant='secondary' type='button' size='md' onClick={() => onUpdateClick(keg.id)}>Update Keg</Button>
       <Button variant='danger' type='button' size='md' onClick={() => onDeleteClick(keg.id)}>Delete</Button>
@@ -26,7 +26,7 @@ KegDetails.propTypes = {
   keg: PropTypes.object,
   onLinkClick: PropTypes.func,
   onDeleteClick: PropTypes.func,
-  onUpdateCLick: propTypes.func
+  onUpdateCLick: PropTypes.func
 }
 
 export default KegDetails;

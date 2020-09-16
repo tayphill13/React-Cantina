@@ -14,9 +14,9 @@ function KegForm(props) {
 
   return (
     <React.Fragment>
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-5">
+      <div className="row">
+        <div className="col-md-4"></div>
+        <div className="col-md-5">
           <Form onSubmit={handleSubmittingForm}>
             <Form.Group controlId="name">
               <Form.Label>Beverage</Form.Label>
@@ -47,7 +47,7 @@ function KegForm(props) {
             <Button className='mb-3' variant='success' type="submit" size='lg' >{buttonText}</Button>
           </Form>
         </div>
-        <div class="col-md-3"></div>
+        <div className="col-md-3"></div>
       </div>
     </React.Fragment>
   )
