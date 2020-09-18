@@ -73,9 +73,9 @@ class KegControl extends React.Component  {
       const masterKegList = state.masterKegList.map(keg => {
         if (keg.id === id && keg.pintsRemaining > 0) {
           return {...keg, pintsRemaining: keg.pintsRemaining - 1};
-      }else {
-        return keg;
-      }
+        } else {
+          return keg;
+        }
     });
       return { masterKegList };
   });
