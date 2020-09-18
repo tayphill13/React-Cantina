@@ -13,7 +13,6 @@ class KegControl extends React.Component  {
       currentPage: 'index',
       currentKeg: null,
     };
-    // this.handleClick =this.handleClick.bind(this);
   }
 
   handleClick = (pageName) => {
@@ -69,11 +68,19 @@ class KegControl extends React.Component  {
       currentKeg: null
     });
   }
-  handleServePint = () => {
-    this.setState((prevState, { pintsRemaining }) => ({
-        pintsRemaining: prevState.pintsRemaining -1
-      }));
-  };
+  handleServePint = (id) => {
+    this.setState(state => {
+      const masterKegList = state.masterKegList.map(keg => {
+        if (keg.id === id && keg.pintsRemaining > 0) {
+          return {...keg, pintsRemaining: keg.pintsRemaining - 1};
+      }else {
+        return keg;
+      }
+    });
+      return { masterKegList };
+  });
+}
+
   render(){
     let pageToDisplay = null;
     if (this.state.currentPage === 'index')  {
