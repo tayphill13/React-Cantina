@@ -69,21 +69,11 @@ class KegControl extends React.Component  {
       currentKeg: null
     });
   }
-  servePint = (updatedKeg) => {
-    const newMasterKegList = this.state.masterKegList.map(kegs => {
-      if (updatedKeg.pintsRemaining !== 0) {
-        return updatedKeg.pintsRemaining - 1;
-      } else {
-        return updatedKeg; 
-      }
-    });
-    this.setState({
-      masterKegList: newMasterKegList,
-      currentPage: 'details',
-      currentKeg: updatedKeg
-    });
-  }
-
+  handleServePint = () => {
+    this.setState((prevState, { pintsRemaining }) => ({
+        pintsRemaining: prevState.pintsRemaining -1
+      }));
+  };
   render(){
     let pageToDisplay = null;
     if (this.state.currentPage === 'index')  {
@@ -100,7 +90,8 @@ class KegControl extends React.Component  {
         keg = {this.state.currentKeg}
         onLinkClick = {this.handleClick}
         onDeleteClick = {this.handleDeleteKeg}
-        onUpdateClick = {this.handleUpdateClick} />
+        onUpdateClick = {this.handleUpdateClick}
+        onServePint = {this.handleServePint} />
     } else if (this.state.currentPage === 'update')  {
       pageToDisplay = <UpdateKeg
         keg = {this.state.currentKeg}

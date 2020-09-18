@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 
 function KegDetails(props) {
-  const { keg, onLinkClick, onDeleteClick, onUpdateClick } = props;
+  const { keg, onLinkClick, onDeleteClick, onUpdateClick, onServePint } = props;
 
   return (
     <React.Fragment>
@@ -13,11 +13,10 @@ function KegDetails(props) {
       <p>{keg.price}</p>
       <p>{keg.origin}</p>
       <p>{keg.pintsRemaining} pints remaining</p>
-      {/* <Button variant='success' type='button' size='md' onClick={()=>props.onLinkClick('serve')}>Serve Pint</Button> */}
-      <Button className="mb-3" variant='secondary' type='button' size='md' onClick={()=>onLinkClick('index')}>Back to Keg List</Button>
+      <Button variant='success' type='button' size='md' onClick={()=> onServePint('serve')}>Serve Pint</Button>
+      <Button className="mb-3" variant='secondary' type='button' size='md' onClick={()=> onLinkClick('index')}>Back to Keg List</Button>
       <Button className="mb-3" variant='secondary' type='button' size='md' onClick={() => onUpdateClick(keg.id)}>Update Keg</Button>
       <Button variant='danger' type='button' size='md' onClick={() => onDeleteClick(keg.id)}>Delete</Button>
-
     </React.Fragment>
   )
 }
@@ -26,7 +25,8 @@ KegDetails.propTypes = {
   keg: PropTypes.object,
   onLinkClick: PropTypes.func,
   onDeleteClick: PropTypes.func,
-  onUpdateCLick: PropTypes.func
+  onUpdateCLick: PropTypes.func,
+  onServePint: PropTypes.func
 }
 
 export default KegDetails;
