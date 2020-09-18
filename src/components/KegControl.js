@@ -69,8 +69,19 @@ class KegControl extends React.Component  {
       currentKeg: null
     });
   }
-  servePint = (id) => {
-    const newMasterKegList
+  servePint = (updatedKeg) => {
+    const newMasterKegList = this.state.masterKegList.map(kegs => {
+      if (updatedKeg.pintsRemaining !== 0) {
+        return updatedKeg.pintsRemaining - 1;
+      } else {
+        return updatedKeg; 
+      }
+    });
+    this.setState({
+      masterKegList: newMasterKegList,
+      currentPage: 'details',
+      currentKeg: updatedKeg
+    });
   }
 
   render(){
