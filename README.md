@@ -8,28 +8,33 @@
 
 _This is a React application that allows the user to add a keg to a list with details about the beverage inside.  The user can continue to add additional kegs, select a keg to see more about the details of what's inside.  The user is also able to select a keg to take a pint from it.  User can then look at the details and see how much of the beverage is remaining._
 
-### Specs
-| Spec |
-| :-------------     | :------------- | :------------- |
-| User is able to select `Add keg` form to view the form for adding a beverage |    |       |
-| User will enter details about the beverage and add to the list  |  |   |
-| User is able to see a list of kegs to be selected |   |     |
-| User is able to select a keg to see more detailed information about the beverage the keg contains |  |   |
-|    |   |   |
-<br>
-<!-- This is my diagram, to move wherever I need it in my readme: -->
-<img src="./src/reactCantinaDiagram.png"
-     alt="React Cantina Diagram"
-     style="margin-right: 10px; width: 1000px" />
-<br>
+### User Stories:
+
+* User is able to select `AddKeg` form to view the form for adding a beverage
+* User will enter details about the beverage and add to the list
+* User is able to see a list of kegs to be selected
+* User is able to select a keg to see more detailed information about the beverage the keg contains
+* User is able to 'ServePint' out of keg and see the pints remaining go down in its details
+* User can both update a keg and delete a particular keg if need be
+
 ## Setup/Installation Requirements
 
 * _Install Git Bash_
 * _Using a Terminal on desktop, user will need to type git init_
 * _Clone file to desktop from repo on github_
-* _Navigate to project folder using command line type: [cd Desktop] followed by [cd React-Cantina]_
-* _In Command Line, type, npm install and wait for the application to complete it's action_
-* _Then type npm run build in the command line terminal_
+* _Navigate to project folder using command line type: `cd Desktop` followed by `cd React-Cantina`_
+* _In Command Line, type, `npm install` and wait for the application to complete it's action_
+* _Then type `npm run build` in the command line terminal_
+* _Finally type `npm start` to use the application_
+
+<br>
+<!-- This is my diagram, to move wherever I need it in my readme: -->
+<img src="./src/React-Cantina-Diagram.png"
+     alt="React Cantina Diagram"
+     style="margin-right: 10px; width: 1000px" />
+<br>
+<br>
+
 
 ## Known Bugs
 
@@ -47,13 +52,7 @@ _Contact me at <taylorphillips133@gmail.com>_
 * _JavaScript_
 * _VSCode_
 * _REACT_
-* _Figma_
-
-### License
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-Copyright (c) 2020 **_Taylor Phillips_**
+* _Figma - for diagram_
 
 
 
@@ -125,3 +124,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2020 **_Taylor Phillips_**
