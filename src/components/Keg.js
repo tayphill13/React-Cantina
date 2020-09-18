@@ -8,7 +8,7 @@ function Keg(props) {
       <Card.Header as='h4'>{props.name}</Card.Header>
       <Card.Body>
         <Card.Text as='h5'>from {props.origin}</Card.Text>
-        <Card.Text>{props.pintsRemaining} pints remaining</Card.Text>
+        <Card.Text>Pints Remaining: {props.pintsRemaining}</Card.Text>
         <Card.Text>${props.price}</Card.Text>
         <Card.Text>{props.brand}</Card.Text>
       </Card.Body>

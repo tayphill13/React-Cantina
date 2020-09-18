@@ -72,13 +72,18 @@ class KegControl extends React.Component  {
     this.setState(state => {
       const masterKegList = state.masterKegList.map(keg => {
         if (keg.id === id && keg.pintsRemaining > 0) {
-          return {...keg, pintsRemaining: keg.pintsRemaining - 1};
+            return {...keg, pintsRemaining: keg.pintsRemaining - 1};
+        } else if (keg.id === id && keg.pintsRemaining === 0) {
+            return {...keg, pintsRemaining: "Out of Stock"};
         } else {
-          alert("This Keg is empty!");
-          return keg;
+            return keg;
         }
     });
-      return { masterKegList: masterKegList, currentPage: 'index', currentKeg: null };
+      this.setState({
+        masterKegList: masterKegList,
+        currentPage: 'index',
+        currentKeg: null
+      });
   });
 }
 

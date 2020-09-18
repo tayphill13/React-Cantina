@@ -12,7 +12,7 @@ function KegDetails(props) {
       <p>{keg.brand}</p>
       <p>{keg.price}</p>
       <p>{keg.origin}</p>
-      <p>{keg.pintsRemaining} pints remaining</p>
+      <p>Pints Remaining: {keg.pintsRemaining}</p>
       <Button className="secondary" variant='success' type='button' size='md' onClick={()=> onServePint(keg.id)}>Serve Pint</Button>
       <Button className="mb-3" variant='secondary' type='button' size='md' onClick={()=> onLinkClick('index')}>Back to Keg List</Button>
       <Button className="mb-3" variant='secondary' type='button' size='md' onClick={() => onUpdateClick(keg.id)}>Update Keg</Button>
