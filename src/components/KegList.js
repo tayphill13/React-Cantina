@@ -17,7 +17,8 @@ function KegList(props) {
             origin={kegs.origin}
             pintsRemaining={kegs.pintsRemaining}
             id={kegs.id}
-            key={kegs.id} />
+            key={kegs.id} />,
+            <button className='dec' onClick={(e) => this.decrement(e)}>Decrement!</button>
         )}
       
       </CardColumns>

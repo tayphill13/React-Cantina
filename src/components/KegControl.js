@@ -69,6 +69,9 @@ class KegControl extends React.Component  {
       currentKeg: null
     });
   }
+  servePint = (id) => {
+    const newMasterKegList
+  }
 
   render(){
     let pageToDisplay = null;
