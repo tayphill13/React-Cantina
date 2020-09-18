@@ -18,18 +18,18 @@ function KegList(props) {
             pintsRemaining={kegs.pintsRemaining}
             id={kegs.id}
             key={kegs.id} />
-        )}
+            )}
       
       </CardColumns>
       <Button variant='secondary' type='button' size='md' onClick={()=>props.onLinkClick('create')}>Add Keg</Button>
     </React.Fragment>
   )
 }
-
 KegList.propTypes = {
   kegList: PropTypes.array,
   onLinkClick: PropTypes.func,
-  onKegClick: PropTypes.func
+  onKegClick: PropTypes.func,
+  onServePint: PropTypes.func
 }
 
 

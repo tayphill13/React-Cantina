@@ -74,10 +74,11 @@ class KegControl extends React.Component  {
         if (keg.id === id && keg.pintsRemaining > 0) {
           return {...keg, pintsRemaining: keg.pintsRemaining - 1};
         } else {
+          alert("This Keg is empty!");
           return keg;
         }
     });
-      return { masterKegList };
+      return { masterKegList: masterKegList, currentPage: 'index', currentKeg: null };
   });
 }
 
