@@ -69,20 +69,20 @@ class KegControl extends React.Component  {
     });
   }
   handleServePint = (id) => {
-      const masterKegList = this.state.masterKegList.map(keg => {
-        if (keg.id === id && keg.pintsRemaining > 0) {
-            return {...keg, pintsRemaining: keg.pintsRemaining - 1};
-        } else if (keg.id === id && keg.pintsRemaining === 0) {
-            return {...keg, pintsRemaining: "Out of Stock"};
-        } else {
-            return keg;
-        }
+    const masterKegList = this.state.masterKegList.map(keg => {
+      if (keg.id === id && keg.pintsRemaining > 0) {
+          return {...keg, pintsRemaining: keg.pintsRemaining - 1};
+      } else if (keg.id === id && keg.pintsRemaining === 0) {
+          return {...keg, pintsRemaining: "Out of Stock"};
+      } else {
+          return keg;
+      }
     });
-      this.setState({
-        masterKegList: masterKegList,
-        currentPage: 'index',
-        currentKeg: null
-      });
+    this.setState({
+      masterKegList: masterKegList,
+      currentPage: 'index',
+      currentKeg: null
+    });
 }
 
   render(){
